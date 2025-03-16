@@ -16,9 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from snippets.views import top
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #自作Viewの追加
+    #testapp01用
     path('testapp01/', include('testapp01.urls')),
+    #snippets用
+    path('', top, name='top'),
+    path('snippets/', include('snippets.urls')),
 ]
