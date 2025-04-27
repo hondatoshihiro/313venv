@@ -2,7 +2,7 @@ from django.conf import settings
 from django.db import models
 
 # Create your models here.
-
+#実践Django Pythonによる本格Webアプリケーション開発(p.69)
 class Snippet(models.Model):
     title = models.CharField("タイトル", max_length=128)
     code = models.TextField("コード", blank=True)
