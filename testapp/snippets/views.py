@@ -26,9 +26,9 @@ def snippet_new(request):
             snippet.created_by = request.user
             snippet.save()
             return redirect(snippet_detail, snippet_id=snippet.pk)
-        else:
-            form = SnippetForm()
-            return render(request, "snippets/snippet_new.html", {'form': form})
+    else:
+        form = SnippetForm()
+    return render(request, "snippets/snippet_new.html", {'form': form})
 
 #実践Django Pythonによる本格Webアプリケーション開発 1.4.4
 @login_required
@@ -41,9 +41,9 @@ def snippet_edit(request, snippet_id):
         if form.is_valid():
             form.save()
             return redirect('snippet_detail', snippet_id=snippet_id)
-        else:
-            form = SnippetForm(instance=snippet)
-        return render(request, 'snippets/snippet_edit.html',{'form': form})
+    else:
+        form = SnippetForm(instance=snippet)
+    return render(request, 'snippets/snippet_edit.html',{'form': form})
 
 
 def snippet_detail(request, snippet_id):
