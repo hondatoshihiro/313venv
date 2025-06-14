@@ -26,4 +26,5 @@ urlpatterns = [
     #snippets用
     path('', top, name='top'),
     path('snippets/', include('snippets.urls')),    #snippets/urls.pyの読み込み
+    path('accounts/', include('accounts.urls')),    #1.6.2
 ]
